@@ -1,9 +1,7 @@
 <!--Produces an SVG with circles scaled and positioned based on factor-->
 <html>
     <head></head>
-    <style> circle{
-        background-color: red;
-    }</style>
+    
     <body>
         <svg id="fund" width="600" height="300"></svg>
         <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -18,14 +16,18 @@
                 return arr
             }
             const factordata = factors(24)
+            const test = [10,20,30]
             d3.select("#fund")
-              //.selectAll("circle")
+              .selectAll("circle")
               .data(factordata)
               .enter()
               .append("circle")
                 .attr("r", d=>d)
-                .attr("cy" = 150)
-                .attr("cx" = d=>d*10)
+                .attr("cy", 150)
+                .attr("cx", d=>d*10)
+                .style('fill', 'maroon')
+                .style('stroke', 'black')
+        
         </script>
 
     </body>

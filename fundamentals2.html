@@ -1,0 +1,31 @@
+<!--Produces an SVG with circles scaled and positioned based on factor-->
+<html>
+    <head></head>
+    <body>
+        <svg id="fund2" width="1000" height="300"></svg>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script>
+            const array = [92, 56, 14, 73, 22, 38, 93, 45, 55]
+            d3.select("#fund2")
+              .selectAll("circle")
+              .data(array)
+              .enter()
+              .append("circle")
+                .attr("r", (d, i) => d/2)
+                .attr("cy", 150)
+                .attr("cx", (d, i) => 50+(i)*100)
+                
+            array.sort(function(a, b){return a - b});
+            
+            setTimeout(function() { 
+            d3.select("#fund2").selectAll("circle") 
+            .data(array) 
+                .transition().duration(1500)
+                .attr("r", (d, i) => d/2)
+                .attr("cy", 150)
+                .attr("cx", (d, i) => 50+(i)*100) }, 2000)
+        
+        </script>
+
+    </body>
+</html>
