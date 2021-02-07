@@ -17,10 +17,10 @@
                 }
                 return arr
             }
-
+            const factordata = factors(24)
             d3.select("#fund")
               //.selectAll("circle")
-              .data(factors(24))
+              .data(factordata)
               .enter()
               .append("circle")
                 .attr("r", d=>d)
