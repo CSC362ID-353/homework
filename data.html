@@ -1,0 +1,67 @@
+<!--
+By: Daniel Lammens
+This code demonstrates d3 selection and
+explains the difference between different data types
+-->
+<body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  
+    <!-- Set up basic webpage structure -->
+    <div id="header"></div>
+    <div id="nominal"></div>
+    <div id="ordinal"></div>
+    <div id="interval"></div>
+    <div id="ratio"></div>
+  
+    <style>
+      .pink {
+          color: white;
+          background-color: #f119d5;
+      }
+      .orange {
+          color: #f1ac15;
+          stroke: antiquewhite;
+      }
+      .blue {
+          color: white;
+          background-color: #377eb8;
+      }
+      .purplegreen {
+          color: #984ea3;
+          stroke: #377eb8;
+      }
+    </style>
+  
+    <script>
+        const headerdiv = d3.select(`#header`);
+            headerdiv.html(`<h1>This web-page was made to explain the 
+                    differences between different forms of data types.</h1>`)
+        const nominaldiv = d3.select(`#nominal`);
+            nominaldiv.classed(`pink`, true);
+            nominaldiv.html(`<h2>Nominal Data</h2><p>Nominal data is a 
+                    type of data where the independent variable is non-quantitatively
+                    valued. There are no meaningful intervals between the independent
+                    variables. One example of nominal data is a person's favorite 
+                    sit-com.</p>`);
+            
+        const ordinaldiv = d3.select(`#ordinal`);
+            ordinaldiv.classed(`orange`, true);
+            ordinaldiv.html(`<h2>Ordinal Data</h2><p>Ordinal data is a type
+                     of data in which there is a scale (or order) of responses,
+                     but the interval between the responses is either not known, 
+                     or not set. ONe example of ordinal data is the 5-star system 
+                     on Amazon.</p>`);
+        const intervaldiv = d3.select(`#interval`);
+            intervaldiv.classed(`blue`, true);
+            intervaldiv.html(`<h2>Interval Data</h2><p>Interval data is a type of
+                     data with set even intervals between each value, but no natural 
+                     zero. A classic example of interval data is temperature in degrees
+                      Fahrenheit.</p>`);
+        const ratiodiv = d3.select(`#ratio`);
+            ratiodiv.classed(`purplegreen`, true);
+            ratiodiv.html(`<h2>Ratio Data</h2><p>Ratio data is a type of data with set
+                 even intervals between each value, and an absolute zero. Score in Pac-Man
+                 is an example of ratio data.</p>`);
+    </script>
+  
+  </body>
